@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="styles.css" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+
+        <script src="js/VehicleDNA.js"></script>
+        <script src="js/Vehicle.js"></script>
+        <script src="js/Edible.js"></script>
+        <script src="js/Poison.js"></script>
+        <script src="js/Food.js"></script>
+        <script src="js/main.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="sketch-container">
+            
+        </div>
+     
+        <div id="controls-container">
+            <button onclick="toggleDebug(event)">Toggle debug</button>
+            <div>
+                Simulation speed:
+                <input type="range" min="0.25" max="5" step="0.25" value="1" oninput="simulationSpeedChanged(event)"/>
+            </div>
+            <div>
+                Mutation rate:
+                <input type="range" min="0" max="1" step="0.01" value="0.05" oninput="VehicleDNA.MUTATION_RATE = event.target.value;"/>
+            </div>
+            <div>
+                Mutation severity:
+                <input type="range" min="0" max="1" step="0.01" value="0.33" oninput="VehicleDNA.MUTATION_SEVERITY = event.target.value;"/>
+            </div>
+            <button onclick="initialiseEnvironment()">Restart simulation</button>
+        </div>  
+
+    </body>
+
+</html>
